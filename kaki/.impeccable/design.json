@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-18T10:44:01.491Z",
+  "title": "Design System: Kaki companion",
+  "extensions": {
+    "colorMeta": {
+      "companion-teal": {
+        "role": "primary",
+        "displayName": "Companion Teal",
+        "tonalRamp": [
+          "oklch(15% 0.10324 180.28)",
+          "oklch(26% 0.10324 180.28)",
+          "oklch(38% 0.10324 180.28)",
+          "oklch(49% 0.10324 180.28)",
+          "oklch(61% 0.10324 180.28)",
+          "oklch(72% 0.10324 180.28)",
+          "oklch(84% 0.10324 180.28)",
+          "oklch(95% 0.10324 180.28)"
+        ]
+      },
+      "companion-concern": {
+        "role": "primary",
+        "displayName": "Concerned Deep Teal",
+        "tonalRamp": [
+          "oklch(15% 0.04496 184.04)",
+          "oklch(26% 0.04496 184.04)",
+          "oklch(38% 0.04496 184.04)",
+          "oklch(49% 0.04496 184.04)",
+          "oklch(61% 0.04496 184.04)",
+          "oklch(72% 0.04496 184.04)",
+          "oklch(84% 0.04496 184.04)",
+          "oklch(95% 0.04496 184.04)"
+        ]
+      },
+      "companion-backing": {
+        "role": "neutral",
+        "displayName": "White Backing",
+        "tonalRamp": [
+          "oklch(15% 0.00000 89.88)",
+          "oklch(26% 0.00000 89.88)",
+          "oklch(38% 0.00000 89.88)",
+          "oklch(49% 0.00000 89.88)",
+          "oklch(61% 0.00000 89.88)",
+          "oklch(72% 0.00000 89.88)",
+          "oklch(84% 0.00000 89.88)",
+          "oklch(95% 0.00000 89.88)"
+        ]
+      },
+      "guidance-yellow": {
+        "role": "secondary",
+        "displayName": "Guidance Yellow",
+        "tonalRamp": [
+          "oklch(15% 0.16933 84.90)",
+          "oklch(26% 0.16933 84.90)",
+          "oklch(38% 0.16933 84.90)",
+          "oklch(49% 0.16933 84.90)",
+          "oklch(61% 0.16933 84.90)",
+          "oklch(72% 0.16933 84.90)",
+          "oklch(84% 0.16933 84.90)",
+          "oklch(95% 0.16933 84.90)"
+        ]
+      },
+      "caption-ink": {
+        "role": "neutral",
+        "displayName": "Caption Ink",
+        "tonalRamp": [
+          "oklch(15% 0.02244 246.06)",
+          "oklch(26% 0.02244 246.06)",
+          "oklch(38% 0.02244 246.06)",
+          "oklch(49% 0.02244 246.06)",
+          "oklch(61% 0.02244 246.06)",
+          "oklch(72% 0.02244 246.06)",
+          "oklch(84% 0.02244 246.06)",
+          "oklch(95% 0.02244 246.06)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "body": {
+        "displayName": "Guidance caption",
+        "purpose": "Visible speech caption. Warning also uses 17px and line-height 1.4."
+      }
+    },
+    "shadows": [
+      {
+        "name": "companion-ambient",
+        "value": "0 2px 2px rgba(0,50,43,.14)",
+        "purpose": "CSS drop-shadow for the happy face."
+      },
+      {
+        "name": "companion-alert",
+        "value": "0 2px 2px rgba(60,0,0,.15)",
+        "purpose": "CSS drop-shadow for concern."
+      }
+    ],
+    "motion": [
+      {
+        "name": "companion-blink",
+        "value": "6s ease-in-out infinite",
+        "purpose": "Happy eye blink, scaleY(.12) at 46%."
+      },
+      {
+        "name": "companion-speech",
+        "value": ".48s ease-in-out infinite alternate",
+        "purpose": "Happy mouth scaleY(.65) to scaleY(1.3), active utterances only."
+      },
+      {
+        "name": "companion-reduced-motion",
+        "value": "none",
+        "purpose": "Disable eye and mouth animation under prefers-reduced-motion:reduce."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Happy companion",
+      "kind": "custom",
+      "refersTo": "companion",
+      "description": "Happy guidance expression. Add ds-speaking only while an utterance is active.",
+      "html": "<div class=\"ds-companion \" role=\"img\" aria-label=\"Kaki, your friendly assistant\"><svg viewBox=\"0 0 64 64\" aria-hidden=\"true\" focusable=\"false\"><g class=\"ds-outline\"><path class=\"ds-eyes ds-happy\" d=\"M9 29 18 19 27 29M37 29 46 19 55 29\"/><path class=\"ds-concern\" d=\"m10 29 16-6m12 0 16 6\"/><path class=\"ds-mouth ds-happy\" d=\"M24 40q8 10 16 0\"/><path class=\"ds-concern\" d=\"M25 44q7-7 14 0\"/></g><g class=\"ds-face\"><path class=\"ds-eyes ds-happy\" d=\"M9 29 18 19 27 29M37 29 46 19 55 29\"/><path class=\"ds-concern\" d=\"m10 29 16-6m12 0 16 6\"/><path class=\"ds-mouth ds-happy\" d=\"M24 40q8 10 16 0\"/><path class=\"ds-concern\" d=\"M25 44q7-7 14 0\"/></g></svg></div>",
+      "css": ".ds-companion{--kaki-ink:#0E8F7E;width:64px;height:64px;flex:0 0 64px;position:relative;filter:drop-shadow(0 2px 2px rgba(0,50,43,.14));pointer-events:none}.ds-companion svg{display:block;width:100%;height:100%;overflow:visible}.ds-face,.ds-outline{fill:none;stroke:var(--kaki-ink);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round}.ds-outline{stroke:#fff;stroke-width:8.5}.ds-eyes{transform-box:fill-box;transform-origin:center;animation:ds-blink 6s ease-in-out infinite}.ds-concern{display:none}.ds-alert{--kaki-ink:#173E39;filter:drop-shadow(0 2px 2px rgba(60,0,0,.15))}.ds-alert .ds-outline{stroke:#FFC21A}.ds-alert .ds-happy{display:none}.ds-alert .ds-concern{display:block}.ds-mouth{transform-box:fill-box;transform-origin:center}.ds-speaking .ds-mouth{animation:ds-talk .48s ease-in-out infinite alternate}.ds-rest{width:80px;height:80px;flex-basis:80px;padding:8px;box-sizing:border-box}@keyframes ds-blink{0%,44%,48%,100%{transform:scaleY(1)}46%{transform:scaleY(.12)}}@keyframes ds-talk{from{transform:scaleY(.65)}to{transform:scaleY(1.3)}}@media(prefers-reduced-motion:reduce){.ds-companion .ds-eyes,.ds-speaking .ds-mouth{animation:none}}"
+    },
+    {
+      "name": "Resting companion",
+      "kind": "custom",
+      "refersTo": "companion-rest",
+      "description": "Padded resting appearance; hide during foreground guidance or alerts.",
+      "html": "<div class=\"ds-companion ds-rest\" role=\"img\" aria-label=\"Kaki, your friendly assistant\"><svg viewBox=\"0 0 64 64\" aria-hidden=\"true\" focusable=\"false\"><g class=\"ds-outline\"><path class=\"ds-eyes ds-happy\" d=\"M9 29 18 19 27 29M37 29 46 19 55 29\"/><path class=\"ds-concern\" d=\"m10 29 16-6m12 0 16 6\"/><path class=\"ds-mouth ds-happy\" d=\"M24 40q8 10 16 0\"/><path class=\"ds-concern\" d=\"M25 44q7-7 14 0\"/></g><g class=\"ds-face\"><path class=\"ds-eyes ds-happy\" d=\"M9 29 18 19 27 29M37 29 46 19 55 29\"/><path class=\"ds-concern\" d=\"m10 29 16-6m12 0 16 6\"/><path class=\"ds-mouth ds-happy\" d=\"M24 40q8 10 16 0\"/><path class=\"ds-concern\" d=\"M25 44q7-7 14 0\"/></g></svg></div>",
+      "css": ".ds-companion{--kaki-ink:#0E8F7E;width:64px;height:64px;flex:0 0 64px;position:relative;filter:drop-shadow(0 2px 2px rgba(0,50,43,.14));pointer-events:none}.ds-companion svg{display:block;width:100%;height:100%;overflow:visible}.ds-face,.ds-outline{fill:none;stroke:var(--kaki-ink);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round}.ds-outline{stroke:#fff;stroke-width:8.5}.ds-eyes{transform-box:fill-box;transform-origin:center;animation:ds-blink 6s ease-in-out infinite}.ds-concern{display:none}.ds-alert{--kaki-ink:#173E39;filter:drop-shadow(0 2px 2px rgba(60,0,0,.15))}.ds-alert .ds-outline{stroke:#FFC21A}.ds-alert .ds-happy{display:none}.ds-alert .ds-concern{display:block}.ds-mouth{transform-box:fill-box;transform-origin:center}.ds-speaking .ds-mouth{animation:ds-talk .48s ease-in-out infinite alternate}.ds-rest{width:80px;height:80px;flex-basis:80px;padding:8px;box-sizing:border-box}@keyframes ds-blink{0%,44%,48%,100%{transform:scaleY(1)}46%{transform:scaleY(.12)}}@keyframes ds-talk{from{transform:scaleY(.65)}to{transform:scaleY(1.3)}}@media(prefers-reduced-motion:reduce){.ds-companion .ds-eyes,.ds-speaking .ds-mouth{animation:none}}"
+    },
+    {
+      "name": "Concerned companion",
+      "kind": "custom",
+      "refersTo": "companion-warning",
+      "description": "Concerned warning expression with yellow backing.",
+      "html": "<div class=\"ds-companion ds-alert\" role=\"img\" aria-label=\"Kaki, your concerned assistant\"><svg viewBox=\"0 0 64 64\" aria-hidden=\"true\" focusable=\"false\"><g class=\"ds-outline\"><path class=\"ds-eyes ds-happy\" d=\"M9 29 18 19 27 29M37 29 46 19 55 29\"/><path class=\"ds-concern\" d=\"m10 29 16-6m12 0 16 6\"/><path class=\"ds-mouth ds-happy\" d=\"M24 40q8 10 16 0\"/><path class=\"ds-concern\" d=\"M25 44q7-7 14 0\"/></g><g class=\"ds-face\"><path class=\"ds-eyes ds-happy\" d=\"M9 29 18 19 27 29M37 29 46 19 55 29\"/><path class=\"ds-concern\" d=\"m10 29 16-6m12 0 16 6\"/><path class=\"ds-mouth ds-happy\" d=\"M24 40q8 10 16 0\"/><path class=\"ds-concern\" d=\"M25 44q7-7 14 0\"/></g></svg></div>",
+      "css": ".ds-companion{--kaki-ink:#0E8F7E;width:64px;height:64px;flex:0 0 64px;position:relative;filter:drop-shadow(0 2px 2px rgba(0,50,43,.14));pointer-events:none}.ds-companion svg{display:block;width:100%;height:100%;overflow:visible}.ds-face,.ds-outline{fill:none;stroke:var(--kaki-ink);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round}.ds-outline{stroke:#fff;stroke-width:8.5}.ds-eyes{transform-box:fill-box;transform-origin:center;animation:ds-blink 6s ease-in-out infinite}.ds-concern{display:none}.ds-alert{--kaki-ink:#173E39;filter:drop-shadow(0 2px 2px rgba(60,0,0,.15))}.ds-alert .ds-outline{stroke:#FFC21A}.ds-alert .ds-happy{display:none}.ds-alert .ds-concern{display:block}.ds-mouth{transform-box:fill-box;transform-origin:center}.ds-speaking .ds-mouth{animation:ds-talk .48s ease-in-out infinite alternate}.ds-rest{width:80px;height:80px;flex-basis:80px;padding:8px;box-sizing:border-box}@keyframes ds-blink{0%,44%,48%,100%{transform:scaleY(1)}46%{transform:scaleY(.12)}}@keyframes ds-talk{from{transform:scaleY(.65)}to{transform:scaleY(1.3)}}@media(prefers-reduced-motion:reduce){.ds-companion .ds-eyes,.ds-speaking .ds-mouth{animation:none}}"
+    },
+    {
+      "name": "Companion caption",
+      "kind": "custom",
+      "refersTo": "companion-caption",
+      "description": "Caption and guidance face. Phone placement is supplied by the app. Noninteractive; no hover or focus state.",
+      "html": "<div class=\"ds-caption-row\"><div class=\"ds-companion \" role=\"img\" aria-label=\"Kaki, your friendly assistant\"><svg viewBox=\"0 0 64 64\" aria-hidden=\"true\" focusable=\"false\"><g class=\"ds-outline\"><path class=\"ds-eyes ds-happy\" d=\"M9 29 18 19 27 29M37 29 46 19 55 29\"/><path class=\"ds-concern\" d=\"m10 29 16-6m12 0 16 6\"/><path class=\"ds-mouth ds-happy\" d=\"M24 40q8 10 16 0\"/><path class=\"ds-concern\" d=\"M25 44q7-7 14 0\"/></g><g class=\"ds-face\"><path class=\"ds-eyes ds-happy\" d=\"M9 29 18 19 27 29M37 29 46 19 55 29\"/><path class=\"ds-concern\" d=\"m10 29 16-6m12 0 16 6\"/><path class=\"ds-mouth ds-happy\" d=\"M24 40q8 10 16 0\"/><path class=\"ds-concern\" d=\"M25 44q7-7 14 0\"/></g></svg></div><div class=\"ds-caption\"><span>Ah Ma, tap on HealthHub to book your appointment.</span></div></div>",
+      "css": ".ds-companion{--kaki-ink:#0E8F7E;width:64px;height:64px;flex:0 0 64px;position:relative;filter:drop-shadow(0 2px 2px rgba(0,50,43,.14));pointer-events:none}.ds-companion svg{display:block;width:100%;height:100%;overflow:visible}.ds-face,.ds-outline{fill:none;stroke:var(--kaki-ink);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round}.ds-outline{stroke:#fff;stroke-width:8.5}.ds-eyes{transform-box:fill-box;transform-origin:center;animation:ds-blink 6s ease-in-out infinite}.ds-concern{display:none}.ds-alert{--kaki-ink:#173E39;filter:drop-shadow(0 2px 2px rgba(60,0,0,.15))}.ds-alert .ds-outline{stroke:#FFC21A}.ds-alert .ds-happy{display:none}.ds-alert .ds-concern{display:block}.ds-mouth{transform-box:fill-box;transform-origin:center}.ds-speaking .ds-mouth{animation:ds-talk .48s ease-in-out infinite alternate}.ds-rest{width:80px;height:80px;flex-basis:80px;padding:8px;box-sizing:border-box}@keyframes ds-blink{0%,44%,48%,100%{transform:scaleY(1)}46%{transform:scaleY(.12)}}@keyframes ds-talk{from{transform:scaleY(.65)}to{transform:scaleY(1.3)}}@media(prefers-reduced-motion:reduce){.ds-companion .ds-eyes,.ds-speaking .ds-mouth{animation:none}}.ds-caption-row{display:flex;align-items:flex-end;gap:8px;max-width:373px;pointer-events:none}.ds-caption{flex:1;min-width:0;background:white;border-radius:16px;outline:2px #0E8F7E solid;outline-offset:-2px;padding:12px 14px;color:#17212A;font-family:Inter,sans-serif;font-size:17px;font-weight:600;line-height:1.4;overflow-wrap:anywhere}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The expressive line companion",
+    "overview": "This records the user-approved companion redesign in `kaki-demo.html`, using the pinned HeyClicky character as its reference. A sparse, angular happy face feels friendly through expression and rounded strokes. Kaki retains its teal identity and switches to concern for warnings.\n\nThis is a component system, not a new whole-page identity. The surrounding demo, phone, controls and app screens remain incumbent context; their observed colors below are descriptive rather than new system commitments.",
+    "keyCharacteristics": [
+      "Minimal inline SVG line geometry.",
+      "Happy guidance and concerned warning expressions.",
+      "Readable captions and one foreground companion.",
+      "Speech-linked motion with reduced-motion support."
+    ],
+    "rules": [
+      {
+        "name": "The Caption Rule",
+        "body": "Every spoken line retains a visible caption; update the existing text span rather than adding duplicate text.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Foreground Face Rule",
+        "body": "Hide resting duplicates while a guidance caption is shown; hide background guidance captions and resting faces while alert overlays are visible.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do retain teal happy strokes, white backing and yellow-backed concern.",
+      "Do keep captions readable in English, Mandarin, Malay and Tamil.",
+      "Do bind mouth motion to speech events and honor reduced-motion.",
+      "Do show one foreground companion during guidance and warnings."
+    ],
+    "donts": [
+      "Don't restore the old dotted-halo mascot in this component.",
+      "Don't animate a speaking mouth merely because a caption is visible.",
+      "Don't treat this component guide as authorization to redesign the surrounding demo."
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+services:
+  kaki-backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: kaki-backend
+    expose:
+      - "5001"
+    environment:
+      - PORT=5001
+      - KAKI_TRUST_PROXY=1
+      - KAKI_ALLOWED_ORIGINS=http://localhost:8080
+      - KAKI_RATE_LIMIT=60
+    restart: unless-stopped
+    # Health check is defined in backend/Dockerfile (no curl needed).
+
+  kaki-frontend:
+    image: nginx:1.27-alpine
+    container_name: kaki-frontend
+    ports:
+      - "8080:80"
+    volumes:
+      - ./deploy/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./kaki-demo.html:/usr/share/nginx/html/kaki-demo.html:ro
+      - ./kaki_model.json:/usr/share/nginx/html/kaki_model.json:ro
+      - ./frontend:/usr/share/nginx/html/figma:ro
+    depends_on:
+      kaki-backend:
+        condition: service_healthy
+    restart: unless-stopped

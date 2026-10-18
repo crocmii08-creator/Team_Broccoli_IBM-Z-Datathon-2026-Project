@@ -1,0 +1,7 @@
+# Must match requirements-train.txt: pickles are only loadable with the
+# scikit-learn version that wrote them (app.py checks manifest.json).
+flask==3.1.2
+flask-cors==6.0.1
+scikit-learn==1.7.2
+numpy==2.3.4
+gunicorn==23.0.0

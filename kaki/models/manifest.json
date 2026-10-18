@@ -1,0 +1,14 @@
+{
+  "schema_version": 2,
+  "sklearn_version": "1.7.2",
+  "trained_at": "2026-10-18T10:33:34+00:00",
+  "data_sources": {
+    "sms": "kaggle:uciml/sms-spam-collection-dataset",
+    "sg": "scam_sg.csv",
+    "paysim": "kaggle:ealaxi/paysim1"
+  },
+  "files": {
+    "scam_model.pkl": "b802eb2604a4334b2ac998ae4e12edd71dfbe3ea3dea707b8d0b9c24dc88efac",
+    "txn_model.pkl": "b5937c5a7fa8743d7b004008e0c8f3e9275b26541c8c100f03004777f42460b8"
+  }
+}

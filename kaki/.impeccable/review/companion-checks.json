@@ -1,0 +1,74 @@
+{
+  "errors": [],
+  "languages": [
+    {
+      "lang": "en",
+      "text": "Ah Ma, tap on HealthHub to book your appointment.",
+      "withinPhone": true,
+      "overflow": false
+    },
+    {
+      "lang": "zh",
+      "text": "阿嬤，点 HealthHub 来预约门诊。",
+      "withinPhone": true,
+      "overflow": false
+    },
+    {
+      "lang": "ms",
+      "text": "Nenek, ketuk HealthHub untuk buat temujanji.",
+      "withinPhone": true,
+      "overflow": false
+    },
+    {
+      "lang": "ta",
+      "text": "பாட்டி, சந்திப்பு பதிவு செய்ய HealthHub தட்டவும்.",
+      "withinPhone": true,
+      "overflow": false
+    }
+  ],
+  "speech": {
+    "started": true,
+    "staleEndIgnored": true,
+    "ended": true,
+    "reset": true
+  },
+  "screens": [
+    {
+      "screen": "screen-0",
+      "withinPhone": true
+    },
+    {
+      "screen": "screen-2",
+      "withinPhone": true
+    },
+    {
+      "screen": "screen-3",
+      "withinPhone": true
+    },
+    {
+      "screen": "screen-4",
+      "withinPhone": true
+    },
+    {
+      "screen": "screen-5",
+      "withinPhone": true
+    },
+    {
+      "screen": "screen-6",
+      "withinPhone": true
+    },
+    {
+      "screen": "screen-7",
+      "withinPhone": true
+    },
+    {
+      "screen": "screen-8",
+      "withinPhone": true
+    }
+  ],
+  "alert": {
+    "happy": "none",
+    "concerned": "block"
+  },
+  "reducedMotion": "none"
+}

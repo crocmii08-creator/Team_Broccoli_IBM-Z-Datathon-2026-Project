@@ -1,0 +1,18 @@
+[
+  {"id":"problem","title":"Everyday tasks. Real uncertainty.","text":"For many seniors, a smartphone means independence. But unfamiliar screens can make everyday tasks difficult."},
+  {"id":"risk","title":"Scams exploit that uncertainty.","text":"A convincing message or an urgent phone call can turn that uncertainty into risk."},
+  {"id":"intro","title":"Meet Kaki.","text":"Meet Kaki, a voice-first companion designed to guide Singapore seniors and flag possible scams."},
+  {"id":"home","title":"One clear next step.","text":"Let's book a clinic appointment. Kaki highlights HealthHub and says, Ah Ma, tap here."},
+  {"id":"booking","title":"Guidance that stays with you.","text":"It guides each choice: book an appointment, select Bedok Polyclinic, then choose a date and time."},
+  {"id":"booked","title":"A little more independence.","text":"The appointment is confirmed. One instruction at a time, with every spoken step also shown as text."},
+  {"id":"message","title":"A prize. A deadline. A risky link.","text":"Next, a WhatsApp message promises a thousand-dollar voucher. It urges Ah Ma to claim a prize before the offer expires."},
+  {"id":"warning","title":"A moment to pause.","text":"Kaki scores the message and shows a warning. The matched phrases explain why it was flagged."},
+  {"id":"family","title":"A trusted person in the loop.","text":"Ah Ma can check with family first. In this prototype, the family alert is simulated."},
+  {"id":"call","title":"The risk can sound convincing.","text":"Then, a caller claims to be a police officer. The demo transcript demands a transfer to a safe account."},
+  {"id":"hangup","title":"Speak up before harm.","text":"As the transcript is scored, Kaki warns Ah Ma to end the call."},
+  {"id":"languages","title":"Help in four languages.","text":"Guidance and warnings support English, Mandarin, Malay and Tamil, with visible captions alongside speech."},
+  {"id":"explain","title":"See why a message was flagged.","text":"The demo console also lets a presenter score messages and inspect matched phrases and the alert log."},
+  {"id":"ibm","title":"Built toward IBM LinuxONE.","text":"The project targets IBM LinuxONE for training and inference. This demo can also score locally in the browser."},
+  {"id":"impact","title":"Confidence, with a safety net.","text":"Our goal: greater independence, earlier warnings, and family support. Real-world impact still needs user testing."},
+  {"id":"close","title":"Kaki","text":"Kaki. A little guidance. A moment to pause. More confidence, together."}
+]

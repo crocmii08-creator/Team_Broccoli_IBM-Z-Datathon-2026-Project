@@ -1,0 +1,6 @@
+**/__pycache__
+**/.pytest_cache
+**/*.png
+*.pptx
+notebooks/.ipynb_checkpoints
+.git
